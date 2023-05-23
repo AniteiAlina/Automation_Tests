@@ -33,8 +33,6 @@ describe('Check the functionality of the bookstore page', function() {
         cy.get('#pages-label').should('have.text', 'Total Pages : ');
         cy.get('#description-label').should('have.text', 'Description : ');
         cy.get('#website-label').should('have.text', 'Website : ');
-
-
   });
 
 })
