@@ -1,0 +1,20 @@
+{
+  "name": "cypress-demo",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ui-regression": "cypress run --browser chrome --spec cypress/e2e/Demoqa/**.js",
+    "ui-regression-allure": "cypress run --browser chrome --spec cypress/e2e/Demoqa/**.js --env allure=true",
+    "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.33.0",
+    "cypress": "^12.13.0",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  }
+}
