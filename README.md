@@ -4,13 +4,13 @@ A testing repository using Cypress to automate the Demo QA website and its suite
 
 Project website link: https://demoqa.com/
 
-# Technology:
+## Technology:
  
- *Automation Framework: Cypress
+ * Automation Framework: Cypress
  
- *Build tool: npm
+ * Build tool: npm
 
- *Bundled Tools: Mocha, Chai
+ * Bundled Tools: Mocha, Chai
  
- *Language: Javascript
+ * Language: Javascript
 
