@@ -4,7 +4,7 @@ A testing repository using Cypress to automate the Demo QA website and its suite
 
 Project website link: https://demoqa.com/
 
-Technology:
+# Technology:
  
  Automation Framework: Cypress
  
