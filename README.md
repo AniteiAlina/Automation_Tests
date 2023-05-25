@@ -20,11 +20,11 @@ Project website link: https://demoqa.com/
 
 ## Requirement:
 
-1.Automate Elements
+1. Automate Elements
 
-2.Automate Forms
+2. Automate Forms
 
-3.Automate Book Store Application
+3. Automate Book Store Application
 
 ## Preconditions
 
