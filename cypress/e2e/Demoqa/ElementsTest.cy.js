@@ -3,7 +3,7 @@ describe('Verify the functionality of elements', function() {
         cy.visit('https://demoqa.com/elements');
     });
 
-   it('T1 - Verify the Text Box section', () => {
+   it('Verify the Text Box section', () => {
     
         cy.get('#item-0').click();
         cy.get('#userName').type('Anitei Alina');
@@ -12,12 +12,26 @@ describe('Verify the functionality of elements', function() {
         cy.get('#permanentAddress').type('Test1, test2, test3');
         cy.get('#submit').click();
 
-        
-        // cy.get('#email').should('contains.text', 'Email:alina.anitei@yahoo.com');
-        // cy.get('#name').should('contains.text', 'Name:Anitei Alina');
-        // cy.get('.border > #currentAddress').should('contains.text', 'Current Address :Test 1234, automation testing ');
-        // cy.get('.border > #permanentAddress').should('contains.text', 'Permanent Address:Test1, test2, test3');
+   })
+
+   it('Check the text box after submit', () => {
+         cy.visit('https://demoqa.com/elements');
+    
+        cy.get('#item-0').click();
+        cy.get('#userName').type('Anitei Alina');
+        cy.get('#userEmail').type('alina.anitei@yahoo.com');
+        cy.get('#currentAddress').type('Test 1234, automation testing');
+        cy.get('#permanentAddress').type('Test1, test2, test3');
+        cy.get('#submit').click();
+
+        cy.get('#name').should('contains.text', 'Name:Anitei Alina');
+        cy.get('#email').should('contains.text', 'Email:alina.anitei@yahoo.com');
+        cy.get('.border > #currentAddress').should('contains.text', 'Current Address :Test 1234, automation testing ');
+        cy.get('.border > #permanentAddress').should('contains.text', 'Permanent Address:Test1, test2, test3');
     })
+
+   })
+        
 
     it('Verify the Check Box Section', () => { 
         cy.visit('https://demoqa.com/elements');
@@ -52,14 +66,35 @@ describe('Verify the functionality of elements', function() {
 
     });
 
-    it('Verify the Radio button section', () => { 
-        cy.visit('https://demoqa.com/elements');
-        cy.get('#item-2').click();
-        cy.get(':nth-child(2) > .custom-control-label').type('Yes').click().should('have.text', 'Yes');
-        cy.get(':nth-child(3) > .custom-control-label').type('Impressive').click().should('have.text', 'Impressive');
+    it('Verify the Radio button', () => { 
+        cy.visit('https://demoqa.com/radio-button');
+        cy.get('#yesRadio').check({force:true});
+        cy.get('.mt-3').should('contains.text', 'Yes');
+        cy.get('#impressiveRadio').check({force:true});
+        cy.get('.mt-3').should('contains.text', 'Impressive');
         cy.get('.custom-control.disabled').click();
         
         
     })
 
+
+    it('Verify the Buttons section' , () => {
+        cy.visit('https://demoqa.com/buttons');
+        cy.get("#doubleClickBtn").dblclick();
+        cy.get("#rightClickBtn").rightclick();
+        
+
     })
+
+    it('Verify Download and Upload buttons are working properly or not', () => {
+        cy.visit('https://demoqa.com/upload-download');
+        cy.get('#downloadButton').click();
+        cy.get('#uploadFile').selectFile('/Users/tester/Desktop/teste/cypress/e2e/Demoqa/picture.png', {
+            action: 'drag-drop'
+        })
+    })
+   
+
+    
+    
+
